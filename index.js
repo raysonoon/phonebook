@@ -1,12 +1,10 @@
 const express = require('express')
 const morgan = require('morgan')
-const cors = require('cors')
 
 const app = express()
 
 app.use(express.static('dist'))
 app.use(express.json())
-app.use(cors())
 
 // Custom morgan token to log request body for POST requests
 morgan.token('body', (req) => {
